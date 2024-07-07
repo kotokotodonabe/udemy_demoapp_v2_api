@@ -29,7 +29,7 @@ module UserAuth
 
   # 署名・検証に使用する秘密鍵
   mattr_accessor :token_secret_signature_key
-  self.token_secret_signature_key = Rails.application.credentials.secret_key_base
+  self.token_secret_signature_key = SecureRandom.hex(64)
 
   # 署名・検証に使用する公開鍵(RS256)
   mattr_accessor :token_public_key
