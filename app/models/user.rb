@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # token生成モジュール
+  include TokenGenerateService
   has_secure_password
 
   # リフレっしょトークンのJWT IDを記憶する
