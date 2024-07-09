@@ -11,4 +11,9 @@ class User < ApplicationRecord
   def forget
     update!(refresh_jti: nil)
   end
+
+  # 共通のJONレスポンス
+  def response_json(payload = {})
+    as_json(only: [:id, :name]).merge(payload).with_indifferent_access
+  end
 end
