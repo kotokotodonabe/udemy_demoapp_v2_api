@@ -38,6 +38,9 @@ module App
     # autoload_pathsを追加しない方が読み込みが早くなる
     config.add_autoload_paths_to_load_path = false
 
+    # Cookieを処理するmeddlewareを追加
+    config.middleware.use ActionDispatch::Cookies
+
     config.api_only = true
   end
 end
